@@ -1,22 +1,31 @@
 /* DIV in proedural voice
-
--TBA
-
-*/
+ 
+ -TBA
+ 
+ */
 //
 //
-//Libraries - minim 
+//Libraries - minim
 //
-//Global Variables 
+//Global Variables
 //
-void settings() {} //END SETIINGS
+//void settings() {} //END SETIINGS
 //
-void setup() {} // END SETUP
+void setup() {
+  println(displayWidth,displayHeight);
+  //size(1920,1080);
+  fullScreen();
+  appWidth = displayWidth;
+  appHeight = displayHeight;
+} // END SETUP
 //
-void draw() {} // END DRAW
-// 
-void mousePressed() {} //END MOUSEPRESSED
+void draw() {
+} // END DRAW
 //
-void keyPressed() {} //END KEYPRESSED
+void mousePressed() {
+} //END MOUSEPRESSED
+//
+void keyPressed() {
+} //END KEYPRESSED
 //
 //END MAIN PROGRAM
