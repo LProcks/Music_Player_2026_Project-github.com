@@ -8,15 +8,25 @@
 //Libraries - minim
 //
 //Global Variables
+int appWidth, appHeight;
 //
-//void settings() {} //END SETIINGS
+void settings() {
+  println(displayWidth,displayHeight);
+  int shorterSide = ( displayWidth > displayHeight ) ? displayHeight : displayHeight ;
+  shorterSide *=0.9; //90% of original 
+  size(shorterSide, shorterSide);
+} //END SETIINGS
 //
 void setup() {
+//  int shorterSide = 1080;
+ // size(shorterSide, shorterSide);
+  /*
   println(displayWidth,displayHeight);
   //size(1920,1080);
   fullScreen();
   appWidth = displayWidth;
   appHeight = displayHeight;
+  */
 } // END SETUP
 //
 void draw() {
