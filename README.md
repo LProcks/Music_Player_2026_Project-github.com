@@ -3,5 +3,5 @@ It should be a music player
 
 
 ### To Do List
-- [ ]Create the dependancy folders
+- [x]Create the dependancy folders
 - [ ]make the case study
