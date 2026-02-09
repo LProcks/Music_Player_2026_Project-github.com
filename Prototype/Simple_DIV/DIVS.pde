@@ -9,7 +9,24 @@ void divs() {
   divs[0] = appWidth * 45/ paperWidth;
   divs[1] = appHeight * 80/ paperHeight;
   divs[2] = appWidth * 111/ paperWidth;
-  divs[3] = appHeight * 243/ paperHeight;
+  divs[3] = appHeight * 178/ paperHeight;
+    divs[4] = appWidth * 45/ paperWidth;
+  divs[5] = appHeight * 80/ paperHeight;
+  divs[6] = appWidth * 111/ paperWidth;
+  divs[7] = appHeight * 178/ paperHeight;
+    divs[8] = appWidth * 45/ paperWidth;
+  divs[9] = appHeight * 80/ paperHeight;
+  divs[10] = appWidth * 111/ paperWidth;
+  divs[11] = appHeight * 178/ paperHeight;
+    divs[12] = appWidth * 45/ paperWidth;
+  divs[13] = appHeight * 80/ paperHeight;
+  divs[14] = appWidth * 111/ paperWidth;
+  divs[15] = appHeight * 178/ paperHeight;
+    divs[16] = appWidth * 45/ paperWidth;
+  divs[17] = appHeight * 80/ paperHeight;
+  divs[18] = appWidth * 111/ paperWidth;
+  divs[19] = appHeight * 178/ paperHeight;
+  
   //
  
   //
