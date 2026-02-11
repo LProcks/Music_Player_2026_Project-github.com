@@ -23,7 +23,7 @@ void setup() {
  
   println(displayWidth,displayHeight);
   //size(1920,1080);
-  fullScreen();
+ fullScreen();
   appWidth = displayWidth;
   appHeight = displayHeight;
  //
