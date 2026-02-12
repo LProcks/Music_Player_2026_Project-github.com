@@ -1,5 +1,5 @@
 //Global Variables
-int numberOfDIVs = 1;
+int numberOfDIVs = 3;
 int numberOfParameters = 4;
 float[] divs = new float[numberOfDIVs*numberOfParameters];
 //
@@ -10,14 +10,14 @@ void divs() {
   divs[1] = appHeight * 135/ paperHeight;
   divs[2] = appWidth * 1495/ paperWidth;
   divs[3] = appHeight * 820/ paperHeight;
-//  divs[4] = appWidth * 45/ paperWidth;
- // divs[5] = appHeight * 80/ paperHeight;
- // divs[6] = appWidth * 111/ paperWidth;
- // divs[7] = appHeight * 178/ paperHeight;
- // divs[8] = appWidth * 45/ paperWidth;
- // divs[9] = appHeight * 80/ paperHeight;
-//  divs[10] = appWidth * 111/ paperWidth;
-//  divs[11] = appHeight * 178/ paperHeight;
+  divs[4] = appWidth * 80/ paperWidth;
+  divs[5] = appHeight * 0/ paperHeight;
+  divs[6] = appWidth * 85/ paperWidth;
+  divs[7] = appHeight * 100/ paperHeight;
+  divs[8] = appWidth * 45/ paperWidth;
+  divs[9] = appHeight * 700/ paperHeight;
+  divs[10] = appWidth * 111/ paperWidth;
+  divs[11] = appHeight * 700/ paperHeight;
  // divs[12] = appWidth * 45/ paperWidth;
 //  divs[13] = appHeight * 80/ paperHeight;
 //  divs[14] = appWidth * 111/ paperWidth;
@@ -37,6 +37,8 @@ void divs() {
 } //END DIVS
 void rectDIV(float x, float y, float w, float h) {
   rect( x, y, w, h);
+ 
+  
 } // end ret divs
 //
 //END SUB PROGRAM DIVS
