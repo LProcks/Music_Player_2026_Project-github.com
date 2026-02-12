@@ -10,14 +10,14 @@ void divs() {
   divs[1] = appHeight * 135/ paperHeight;
   divs[2] = appWidth * 1495/ paperWidth;
   divs[3] = appHeight * 820/ paperHeight;
-  divs[4] = appWidth * 80/ paperWidth;
+  divs[4] = appWidth * 1869/ paperWidth;
   divs[5] = appHeight * 0/ paperHeight;
-  divs[6] = appWidth * 85/ paperWidth;
-  divs[7] = appHeight * 100/ paperHeight;
-  divs[8] = appWidth * 45/ paperWidth;
-  divs[9] = appHeight * 700/ paperHeight;
-  divs[10] = appWidth * 111/ paperWidth;
-  divs[11] = appHeight * 700/ paperHeight;
+  divs[6] = appWidth * 90/ paperWidth;
+  divs[7] = appHeight * 90/ paperHeight;
+  divs[8] = appWidth * 0/ paperWidth;
+  divs[9] = appHeight * 1000 / paperHeight;
+  divs[10] = appWidth * 90/ paperWidth;
+  divs[11] = appHeight * 80/ paperHeight;
  // divs[12] = appWidth * 45/ paperWidth;
 //  divs[13] = appHeight * 80/ paperHeight;
 //  divs[14] = appWidth * 111/ paperWidth;
@@ -31,7 +31,7 @@ void divs() {
 
   //
   for ( int i=0; i<divs.length; i+=4) {
-    rectDIV(divs[0], divs[i+1], divs[i+2], divs[i+3]);
+    rectDIV(divs[i], divs[i+1], divs[i+2], divs[i+3]);
     //
   } // END FOR
 } //END DIVS
