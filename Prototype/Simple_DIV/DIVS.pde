@@ -1,27 +1,27 @@
 //Global Variables
-int numberOfDIVs = 3;
+int numberOfDIVs = 4;
 int numberOfParameters = 4;
 float[] divs = new float[numberOfDIVs*numberOfParameters];
 //
 void divs() {
-  float paperWidth = 1960;
-  float paperHeight = 1080;
-  divs[0] = appWidth * 245/ paperWidth;
-  divs[1] = appHeight * 135/ paperHeight;
-  divs[2] = appWidth * 1495/ paperWidth;
-  divs[3] = appHeight * 820/ paperHeight;
-  divs[4] = appWidth * 1869/ paperWidth;
+  float paperWidth = 32;
+  float paperHeight = 24;
+  divs[0] = appWidth * 0/ paperWidth;
+  divs[1] = appHeight * 22/ paperHeight;
+  divs[2] = appWidth * 2/ paperWidth;
+  divs[3] = appHeight * 24/ paperHeight;
+  divs[4] = appWidth * 30.5/ paperWidth;
   divs[5] = appHeight * 0/ paperHeight;
-  divs[6] = appWidth * 90/ paperWidth;
-  divs[7] = appHeight * 90/ paperHeight;
-  divs[8] = appWidth * 0/ paperWidth;
-  divs[9] = appHeight * 1000 / paperHeight;
-  divs[10] = appWidth * 90/ paperWidth;
-  divs[11] = appHeight * 80/ paperHeight;
- // divs[12] = appWidth * 45/ paperWidth;
-//  divs[13] = appHeight * 80/ paperHeight;
-//  divs[14] = appWidth * 111/ paperWidth;
- // divs[15] = appHeight * 178/ paperHeight;
+  divs[6] = appWidth * 33/ paperWidth;
+  divs[7] = appHeight * 2/ paperHeight;
+  divs[8] = appWidth * 8/ paperWidth;
+  divs[9] = appHeight * 6/ paperHeight;
+  divs[10] = appWidth * 16/ paperWidth;
+  divs[11] = appHeight * 12/ paperHeight;
+  divs[12] = appWidth * 9/ paperWidth;
+  divs[13] = appHeight * 7/ paperHeight;
+  divs[14] = appWidth * 7/ paperWidth;
+  divs[15] = appHeight * 6/ paperHeight;
 //  divs[16] = appWidth * 45/ paperWidth;
  // divs[17] = appHeight * 80/ paperHeight;
 //  divs[18] = appWidth * 111/ paperWidth;
