@@ -70,7 +70,7 @@ void draw() {
   if ( musicGUI==true ) {
     seeMusicGUI();
   } else {
-    background(0);
+    background(25);
   }
   seeQuitMusicButton();
   //

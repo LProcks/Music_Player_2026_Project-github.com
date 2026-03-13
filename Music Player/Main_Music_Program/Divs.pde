@@ -21,6 +21,7 @@ void divs() {
   divs[2] = appWidth*1/2 ;
   divs[3] = appHeight*1/2 ;
   //
+  float referentPlayButtons = divs[2] / 7.5;
   float referent = divs[2] / 13;
   float textWidth = referent*5;
   float textHeight = referent*3;
@@ -64,7 +65,7 @@ void divs() {
       //
       //Note: WHILE below not even tested if above if is executed
     } else if ( (i%4==0 || i%4==1) && ( int(i/4)>=a || int(i/4)<=8 ) ) {
-      while ( b<5 ) {
+      while ( b<3 ) {
         divs[(a*a)+(a*b)] = column[b];
         divs[ ((a*a)+(a*b)) + 1 ] = row[1];
         //
@@ -72,7 +73,7 @@ void divs() {
         b++; //CAUTION: do not reset once used
       }
     } else if ( (i%4==0 || i%4==1) && int(i/4)>=9 || int(i/4)<=13 ) {
-      while ( d<5 ) {
+      while ( d<3 ) {
         divs[(c*a)+(a*d)] = column[d];
         divs[ ((c*a)+(a*d)) + 1 ] = row[2];
         //
