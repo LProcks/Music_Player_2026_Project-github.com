@@ -7,7 +7,7 @@ float[] musicButtonDivX = new float[numberOfButtons];
 //
 void populationBuild() {
   //Population Building
-  buttonWidth = appWidth/14; //Number of Buttons in a Row + 2xPadding
+  buttonWidth = appWidth/13; //Number of Buttons in a Row + 2xPadding
   buttonY = appHeight*3/5; //Most Buttons
   int randomButtonX = 0;
   randomButtonY = 0;
@@ -29,34 +29,37 @@ void drawMusicDivs( float[] x, float y, float d ) {
   }
 }//End Music DIVs
 //
-void musicSymbol( int index, float divX, float divY, float divDimension ) {
-  divX = smallerDivXY(divX, divDimesnion);
-  divY = smallerDivXY(divY, divDimesnion);
-  divDimension = divDimension*1/2;
+void musicSymbol( int index, float divX, float divY, float divDimension ) { //index from X-Var, musicButtonDivX
+  divX = smallerNum( divX, divDimension );
+  divY = smallerNum( divY, divDimension );
+  divDimension = smallerNum( divDimension );
   //
-  if (index==1 || index==2 || index==7 || index==8 ) drawMusicDivs( divX,divY, divDimension);
-  if (index==2) drawLines( divX, divY, divDimension);
-  if  drawWideTriangle ( 5,divX,divY, divDimension);
-  if (index==7 || index==8){
-    divX = smallerDivXY( dixX,divDimension);
-    divY = smallerDivXY( divY,divDimension
-    divDimension = smallerDivDimension (divDimension);
-    drawMusicDivs(divX,divY,divDimension);
-    
+  if ( index==1 || index==2 || index==7 || index==8 ) drawMusicDivs( divX, divY, divDimension );
+  if ( index==2 || index==7 || index==8) drawLines( divX, divY, divDimension );
+  if ( index==5 ) drawWideTriangle( 5, divX, divY, divDimension );
+  if (index==6) drawThinTriangle ( 6, divX, divY, divDimension); 
+  if ( index==7 || index==8 ) {
+    divX = smallerNum( divX, divDimension );
+    divY = smallerNum( divY, divDimension );
+    divDimension = smallerNum( divDimension );
+    drawMusicDivs( divX, divY, divDimension );
   }
-}
-
-void smallerDimension(float divDimension){
-  return divDimension = divDimension*1/2;
-}
-void smallerDivXY(float divXY, float divDimesnion){
+}//End Music Symbols
+float smallerNum( float divXY, float divDimension ) {
   return divXY = divXY + divDimension*1/4;
 }
-void drawLines (float divX, float divY, float divDimension){
-line( divX, divY, divX+divDimension,divY+divDimension);
-line(divX+divDimension, divY,divX, divY+divDimension);
+float smallerNum( float divDimension ) {
+  return divDimension*1/2;
 }
-  //index from X-Var, musicButtonDivX
-//End Music Symbols
+void drawLines( float divX, float divY, float divDimension ) {
+  line(divX, divY, divX+divDimension, divY+divDimension);
+  line(divX+divDimension, divY, divX, divY+divDimension);
+}
+void drawWideTriangle( int index, float divX, float divY, float divDimension ) {
+  triangle( divX, divY, divX+divDimension, divY+smallerNum(divDimension), divX, divY+divDimension  );
+}
+void drawThinTriangle(int index, float divX, float divY, float divDimension) {
+triangle( divX, divY, divX+divDimension*1/2, divY+smallerNum(divDimension), divX, divY+divDimension  );
+}
 //
 //End Subprogram Music Buttons
