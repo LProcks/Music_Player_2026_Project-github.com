@@ -37,7 +37,10 @@ void musicSymbol( int index, float divX, float divY, float divDimension ) { //in
   if ( index==1 || index==2 || index==7 || index==8 ) drawMusicDivs( divX, divY, divDimension );
   if ( index==2 || index==7 || index==8) drawLines( divX, divY, divDimension );
   if ( index==5 ) drawWideTriangle( 5, divX, divY, divDimension );
-  if (index==6) drawThinTriangle ( 6, divX, divY, divDimension); 
+  if (index==6){ 
+    drawThinTriangle ( 1, divX, divY, divDimension); 
+    drawThinTriangle ( -1, divX, divY, divDimension); 
+}
   if ( index==7 || index==8 ) {
     divX = smallerNum( divX, divDimension );
     divY = smallerNum( divY, divDimension );
@@ -59,7 +62,7 @@ void drawWideTriangle( int index, float divX, float divY, float divDimension ) {
   triangle( divX, divY, divX+divDimension, divY+smallerNum(divDimension), divX, divY+divDimension  );
 }
 void drawThinTriangle(int index, float divX, float divY, float divDimension) {
-triangle( divX, divY, divX+divDimension*1/2, divY+smallerNum(divDimension), divX, divY+divDimension  );
+triangle( divX+2, divY+1/2, divX+divDimension*3/4, divY+smallerNum(divDimension), divX, divY+divDimension  );
 }
 //
 //End Subprogram Music Buttons
