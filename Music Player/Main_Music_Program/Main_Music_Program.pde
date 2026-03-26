@@ -26,6 +26,7 @@
 //Library - Minim
 //
 //Global Variables
+import java.io.File; 
 int appWidth, appHeight;
 Boolean musicGUI=false;
 //
