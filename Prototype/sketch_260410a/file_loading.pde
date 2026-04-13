@@ -12,14 +12,15 @@ PImage[] imagesPlayList;
 void fileImageLoading() {
   String upArrow = ".."; //2x
   String open = "/";
-  String dependanciesFolder = "Dependancies"; //Relative Pathway
+  String musicplayerFolder = "Music_Player"; //Relative Pathway
   String imagesFolder = "Images"; //Relative Pathway
+  String MusicFolder = "music"; 
   // if ( numberOfFiles==0 ) ... separete reading images with reading music
-  String imagesDirectory = sketchPath( upArrow + open + upArrow + open + upArrow + open + dependanciesFolder + open + imagesFolder + open ); //Hardcoded Folder Design
+  String musicDirectory = sketchPath( upArrow + open + upArrow + open + musicplayerFolder + MusicFolder ); //Hardcoded Folder Design
   //ErrorCheck("Inspection, Images Directory:", imagesDirectory);
   //
   //currentSong variable controls Music and Image to CANVAS
-  fileReading(imagesDirectory); //Sets Music Variables, used for images
+  fileReading(musicDirectory); //Sets Music Variables, used for images
 } //End File Loading
 //
 void fileReading(String directory) {

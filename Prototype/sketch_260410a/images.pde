@@ -1,6 +1,6 @@
 /* Images in Procedural VOICE
  - shows basic Music Menu
- */
+ /*
 //
 //Library - Minim
 import java.io.File; //Partial & Wild Card, *
