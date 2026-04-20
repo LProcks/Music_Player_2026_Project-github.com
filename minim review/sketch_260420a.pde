@@ -54,3 +54,16 @@ playList[ currentSong ] = minim.loadFile( file ); //ERROR: Verify Spelling & Lib
 file = soundEffectsDirectory + soundEffect1 + fileExtension_mp3; //Rewritting FILE
 soundEffects[currentSong] = minim.loadFile( file ); //ERROR: Verify Spelling & Library installed, Sketch / Import Library
 //
+if ( playList[currentSong]==null || soundEffects[currentSong]==null){
+  println ("the play list or sound effects did not load @#$%");
+  printArray(playList);
+  printArray(soundEffects);
+} else { 
+  playList[currentSong].play();
+  soundEffects[currentSong].play();
+  //
+  //
+  printArray(playList);
+  printArray(soundEffects);
+  //akdsjkdajldjwaidjoafjsf jfjfjfjjfjfjjjfjfjfjffijirfjifrjifjirfij
+}
