@@ -24,9 +24,10 @@ import ddf.minim.spi.*;
 import ddf.minim.ugens.*;
 //Global Varaibles
 Minim minim; //initates entire class
-int numberOfSongs = 1; //Best Practice
+int numberOfSongs = 5; //Best Practice
 int numberOfSoundEffects = 1; //Best Practice
 AudioPlayer[] playList = new AudioPlayer[ numberOfSongs ];
+AudioMetaData[] playListMetaData = new AudioMetaData[numberOfSongs]; 
 AudioPlayer[] soundEffects = new AudioPlayer[ numberOfSoundEffects];
 int currentSong = numberOfSongs - numberOfSongs; //ZERO, Math Property
 //
@@ -38,20 +39,21 @@ int appHeight;
 //
 //music loading
 minim = new Minim(this); 
-String upArrow = "..";
+String upArrow = "../";
 String musicFolder = "Music/"; //Developer Specific
 String soundEffectsFolder = "Sound Effects/"; //Developer Specific
-String normalFolder = "Dependancies/"; //Developer Specific
+String normalFolder = "Music_Player/"; //Developer Specific
 String songName1 = "Silence";
 String soundEffect1 = "null";
 String fileExtension_mp3 = ".mp3";
 String fileExtension_WAV = ".wav";
 //
 //
-String musicDirectory = upArrow + musicFolder + normalFolder; //Concatenation
-String soundEffectsDirectory = upArrow + musicFolder + soundEffectsFolder; //Concatenation
+String musicDirectory =  upArrow + upArrow + normalFolder + musicFolder; //Concatenation
+String soundEffectsDirectory = upArrow + upArrow + musicFolder + soundEffectsFolder; //Concatenation
 String file = musicDirectory + songName1 + fileExtension_WAV; //TO BE Rewritten and deleted once file is LOADED
 playList[ currentSong ] = minim.loadFile( file ); //ERROR: Verify Spelling & Library installed, Sketch / Import Library
+playListMetaData [currentSong] = playList[currentSong].getMetaData();
 file = soundEffectsDirectory + soundEffect1 + fileExtension_mp3; //Rewritting FILE
 soundEffects[currentSong] = minim.loadFile( file ); //ERROR: Verify Spelling & Library installed, Sketch / Import Library
 //
@@ -67,6 +69,7 @@ if ( playList[currentSong]==null || soundEffects[currentSong]==null){
   printArray(playList);
   printArray(soundEffects);
   //akdsjkdajldjwaidjoafjsf jfjfjfjjfjfjjjfjfjfjffijirfjifrjifjirfij
+  inspectMetaData( playListMetaData[currentSong]); 
 }
 }
 void draw() {
