@@ -27,50 +27,50 @@ Minim minim; //initates entire class
 int numberOfSongs = 5; //Best Practice
 int numberOfSoundEffects = 1; //Best Practice
 AudioPlayer[] playList = new AudioPlayer[ numberOfSongs ];
-AudioMetaData[] playListMetaData = new AudioMetaData[numberOfSongs]; 
+AudioMetaData[] playListMetaData = new AudioMetaData[numberOfSongs];
 AudioPlayer[] soundEffects = new AudioPlayer[ numberOfSoundEffects];
 int currentSong = numberOfSongs - numberOfSongs; //ZERO, Math Property
 //
-void setup(){
-// display
-fullScreen();
-int appWidth;
-int appHeight;
-//
-//music loading
-minim = new Minim(this); 
-String upArrow = "../";
-String musicFolder = "Music/"; //Developer Specific
-String soundEffectsFolder = "Sound Effects/"; //Developer Specific
-String normalFolder = "Music_Player/"; //Developer Specific
-String songName1 = "Silence";
-String soundEffect1 = "null";
-String fileExtension_mp3 = ".mp3";
-String fileExtension_WAV = ".wav";
-//
-//
-String musicDirectory =  upArrow + upArrow + normalFolder + musicFolder; //Concatenation
-String soundEffectsDirectory = upArrow + upArrow + musicFolder + soundEffectsFolder; //Concatenation
-String file = musicDirectory + songName1 + fileExtension_WAV; //TO BE Rewritten and deleted once file is LOADED
-playList[ currentSong ] = minim.loadFile( file ); //ERROR: Verify Spelling & Library installed, Sketch / Import Library
-playListMetaData [currentSong] = playList[currentSong].getMetaData();
-file = soundEffectsDirectory + soundEffect1 + fileExtension_mp3; //Rewritting FILE
-soundEffects[currentSong] = minim.loadFile( file ); //ERROR: Verify Spelling & Library installed, Sketch / Import Library
-//
-if ( playList[currentSong]==null || soundEffects[currentSong]==null){
-  println ("the play list or sound effects did not load @#$%");
-  printArray(playList);
-  printArray(soundEffects);
-} else { 
-  playList[currentSong].play();
-  soundEffects[currentSong].play();
+void setup() {
+  // display
+  fullScreen();
+  int appWidth;
+  int appHeight;
+  //
+  //music loading
+  minim = new Minim(this);
+  String upArrow = "../";
+  String musicFolder = "Music/"; //Developer Specific
+  String soundEffectsFolder = "Sound Effects/"; //Developer Specific
+  String normalFolder = "Music Player/"; //Developer Specific
+  String songName1 = "Silence";
+  String soundEffect1 = "null";
+  String fileExtension_mp3 = ".mp3";
+  String fileExtension_WAV = ".wav";
   //
   //
-  printArray(playList);
-  printArray(soundEffects);
-  //akdsjkdajldjwaidjoafjsf jfjfjfjjfjfjjjfjfjfjffijirfjifrjifjirfij
-  inspectMetaData( playListMetaData[currentSong]); 
-}
+  String musicDirectory =  upArrow + normalFolder + musicFolder; //Concatenation
+  String soundEffectsDirectory = upArrow + upArrow + musicFolder + soundEffectsFolder; //Concatenation
+  String file = musicDirectory + songName1 + fileExtension_WAV; //TO BE Rewritten and deleted once file is LOADED
+  playList[ currentSong ] = minim.loadFile( file ); //ERROR: Verify Spelling & Library installed, Sketch / Import Library
+  playListMetaData [currentSong] = playList[currentSong].getMetaData();
+  file = soundEffectsDirectory + soundEffect1 + fileExtension_mp3; //Rewritting FILE
+  soundEffects[currentSong] = minim.loadFile( file ); //ERROR: Verify Spelling & Library installed, Sketch / Import Library
+  //
+  if ( playList[currentSong]==null || soundEffects[currentSong]==null) {
+    println ("the play list or sound effects did not load @#$%");
+    printArray(playList);
+    printArray(soundEffects);
+  } else {
+    playList[currentSong].play();
+    soundEffects[currentSong].play();
+    //
+    //
+    printArray(playList);
+    printArray(soundEffects);
+    //akdsjkdajldjwaidjoafjsf jfjfjfjjfjfjjjfjfjfjffijirfjifrjifjirfij
+    inspectMetaData( playListMetaData[currentSong]);
+  }
 }
 void draw() {
 }//End Draw
@@ -80,9 +80,9 @@ void mousePressed() {
 //
 void keyPressed() {
   /* Simple Play
-  playList[currentSong].play();
-  currentSong++;
-  */
+   playList[currentSong].play();
+   currentSong++;
+   */
   //
   /* Key Board Short Cuts ... learning what the Music Buttons could be
    Note: CAP Lock with ||
