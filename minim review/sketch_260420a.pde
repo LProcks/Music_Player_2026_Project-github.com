@@ -39,23 +39,39 @@ void setup() {
   //
   //music loading
   minim = new Minim(this);
+  String[] songName = new String [numberOfSongs];
+    songName[currentSong] = "Ghost_Walk";
+  currentSong++;
+  songName[currentSong] = "groove";
+  currentSong++;
+  songName[currentSong] = "Newsroom";
+  currentSong++;
+  songName[currentSong] = "Start_Your_Engines";
+  currentSong++;
+  songName[currentSong] = "The_Simplest";
+  currentSong = resetDefault(currentSong);
+  
   String upArrow = "../";
   String musicFolder = "Music/"; //Developer Specific
-  String soundEffectsFolder = "Sound Effects/"; //Developer Specific
+  String soundEffectsFolder = "Sound_Effects/"; //Developer Specific
   String normalFolder = "Music Player/"; //Developer Specific
-  String songName1 = "Silence";
-  String soundEffect1 = "null";
+  String Dependancies = "Dependancies/";
+  String soundEffect1 = "Heat_Stroke";
   String fileExtension_mp3 = ".mp3";
   String fileExtension_WAV = ".wav";
   //
   //
-  String musicDirectory =  upArrow + normalFolder + musicFolder; //Concatenation
-  String soundEffectsDirectory = upArrow + upArrow + musicFolder + soundEffectsFolder; //Concatenation
-  String file = musicDirectory + songName1 + fileExtension_WAV; //TO BE Rewritten and deleted once file is LOADED
-  playList[ currentSong ] = minim.loadFile( file ); //ERROR: Verify Spelling & Library installed, Sketch / Import Library
-  playListMetaData [currentSong] = playList[currentSong].getMetaData();
-  file = soundEffectsDirectory + soundEffect1 + fileExtension_mp3; //Rewritting FILE
-  soundEffects[currentSong] = minim.loadFile( file ); //ERROR: Verify Spelling & Library installed, Sketch / Import Library
+  String pathway;
+  for (String name : songName ) { //FOR Each
+    pathway = musicFolder + name + fileExtension_WAV; //TO BE Rewritten and deleted once file is LOADED
+    playList[ currentSong ] = minim.loadFile( pathway ); //ERROR: Verify Spelling & Library installed, Sketch / Import Library
+    playListMetaData[ currentSong ] = playList[ currentSong ].getMetaData();
+    currentSong++;
+  }//End FOR-Each
+  currentSong = resetDefault(currentSong);
+  //
+  pathway = soundEffectsFolder + soundEffect1 + fileExtension_WAV; //Rewritting FILE
+  soundEffects[currentSong] = minim.loadFile( pathway ); //ERROR: Verify Spelling & Library installed, Sketch / Import Library
   //
   if ( playList[currentSong]==null || soundEffects[currentSong]==null) {
     println ("the play list or sound effects did not load @#$%");
@@ -71,8 +87,17 @@ void setup() {
     //akdsjkdajldjwaidjoafjsf jfjfjfjjfjfjjjfjfjfjffijirfjifrjifjirfij
     inspectMetaData( playListMetaData[currentSong]);
   }
+   for ( AudioPlayer song : playList ) {
+    if ( song == null ) { //ERROR, play list is NULL
+      //See FILE or minim.loadFile
+      println("The Play List did not load properly");
+      printArray(playList);
+      exit();
+    }
+}
 }
 void draw() {
+  background(222);
 }//End Draw
 //
 void mousePressed() {
