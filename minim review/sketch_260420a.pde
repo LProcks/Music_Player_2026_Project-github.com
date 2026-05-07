@@ -31,24 +31,25 @@ AudioMetaData[] playListMetaData = new AudioMetaData[numberOfSongs];
 AudioPlayer[] soundEffects = new AudioPlayer[ numberOfSoundEffects];
 int currentSong = numberOfSongs - numberOfSongs; //ZERO, Math Property
 //
+int appWidth;
+  int appHeight;
 void setup() {
   // display
   fullScreen();
-  int appWidth;
-  int appHeight;
+ 
   //
   //music loading
   minim = new Minim(this);
   String[] songName = new String [numberOfSongs];
-    songName[currentSong] = "Ghost_Walk";
+    songName[currentSong] = "Crime Pays";
   currentSong++;
-  songName[currentSong] = "groove";
+  songName[currentSong] = "Digital";
   currentSong++;
-  songName[currentSong] = "Newsroom";
+  songName[currentSong] = "My Calling";
   currentSong++;
-  songName[currentSong] = "Start_Your_Engines";
+  songName[currentSong] = "Parasite";
   currentSong++;
-  songName[currentSong] = "The_Simplest";
+  songName[currentSong] = "Silence";
   currentSong = resetDefault(currentSong);
   
   String upArrow = "../";
@@ -63,14 +64,14 @@ void setup() {
   //
   String pathway;
   for (String name : songName ) { //FOR Each
-    pathway = musicFolder + name + fileExtension_WAV; //TO BE Rewritten and deleted once file is LOADED
+    pathway = upArrow + normalFolder + musicFolder + name + fileExtension_WAV; //TO BE Rewritten and deleted once file is LOADED
     playList[ currentSong ] = minim.loadFile( pathway ); //ERROR: Verify Spelling & Library installed, Sketch / Import Library
     playListMetaData[ currentSong ] = playList[ currentSong ].getMetaData();
     currentSong++;
   }//End FOR-Each
   currentSong = resetDefault(currentSong);
   //
-  pathway = soundEffectsFolder + soundEffect1 + fileExtension_WAV; //Rewritting FILE
+  pathway = upArrow + Dependancies + soundEffectsFolder + soundEffect1 + fileExtension_WAV; //Rewritting FILE
   soundEffects[currentSong] = minim.loadFile( pathway ); //ERROR: Verify Spelling & Library installed, Sketch / Import Library
   //
   if ( playList[currentSong]==null || soundEffects[currentSong]==null) {
@@ -97,6 +98,8 @@ void setup() {
 }
 }
 void draw() {
+    drawText( playListMetaData[currentSong].title(), playListMetaData[currentSong].genre() ); //Note: also author // playListMetaData[currentSong].genre()
+
   background(222);
 }//End Draw
 //
@@ -104,7 +107,7 @@ void mousePressed() {
 } //End Mouse Pressed
 //
 void keyPressed() {
-  /* Simple Play
+    /* Simple Play
    playList[currentSong].play();
    currentSong++;
    */
