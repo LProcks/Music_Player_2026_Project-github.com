@@ -1,3 +1,4 @@
+/*
 void drawText(String title, String message) {
   //Population: DIVs
   //Note: int(i/4) && i%4==2,3 (width, height)
@@ -23,13 +24,13 @@ void drawText(String title, String message) {
   rect(messageDIV_X, messageDIV_Y, messageDIV_Width, messageDIV_Height);
   rect(quitX, quitY, quitWidth, quitHeight);
   //
-  /*Fonts from OS
+  //Fonts from OS
    println("Start of Console"); //ERROR: in case CONSOLE Memory not enough
    String[] fontList = PFont.list(); //To list all fonts available on system
    printArray(fontList); //For listing all possible fonts to choose, then createFont
    //Spelling Counts and must compare CONSOLE v Tools / Create Font / Create Font Spelling
    //Tools / Create Font / Find Font / Do Not Press "OK", known conflict between loadFont() and createFont()
-   */
+   
   // Students enter all text from Case Study
   String x = "X";
   //
@@ -39,7 +40,7 @@ void drawText(String title, String message) {
   float fontSize2 = messageDIV_Height;
   float fontSize3 = quitHeight;
   PFont font; //Font Varaible Name, able to have more than one Font
-  String harrington = "Harrington"; //Spelling of the Font Matters, see PFont.list() v Create Font above
+  String harrington = "Times_New_Roman"; //Spelling of the Font Matters, see PFont.list() v Create Font above
   font = createFont(harrington, fontSize1);
   //
   //Drawing Text
@@ -106,3 +107,4 @@ void drawText(String title, String message) {
 }//End Draw Text
 //
 //End Text Example Subprogram
+*/

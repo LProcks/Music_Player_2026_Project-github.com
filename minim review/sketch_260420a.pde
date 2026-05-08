@@ -35,7 +35,7 @@ int appWidth;
   int appHeight;
 void setup() {
   // display
-  fullScreen();
+   size(1400, 900);
  
   //
   //music loading
@@ -98,7 +98,7 @@ void setup() {
 }
 }
 void draw() {
-    drawText( playListMetaData[currentSong].title(), playListMetaData[currentSong].genre() ); //Note: also author // playListMetaData[currentSong].genre()
+    //drawText( playListMetaData[currentSong].title(), playListMetaData[currentSong].genre() ); //Note: also author // playListMetaData[currentSong].genre()
 
   background(222);
 }//End Draw
