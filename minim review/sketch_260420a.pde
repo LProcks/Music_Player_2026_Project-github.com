@@ -32,16 +32,16 @@ AudioPlayer[] soundEffects = new AudioPlayer[ numberOfSoundEffects];
 int currentSong = numberOfSongs - numberOfSongs; //ZERO, Math Property
 //
 int appWidth;
-  int appHeight;
+int appHeight;
 void setup() {
   // display
-   size(1400, 900);
- 
+  size(1400, 900);
+
   //
   //music loading
   minim = new Minim(this);
   String[] songName = new String [numberOfSongs];
-    songName[currentSong] = "Crime Pays";
+  songName[currentSong] = "Crime Pays";
   currentSong++;
   songName[currentSong] = "Digital";
   currentSong++;
@@ -51,7 +51,7 @@ void setup() {
   currentSong++;
   songName[currentSong] = "Silence";
   currentSong = resetDefault(currentSong);
-  
+
   String upArrow = "../";
   String musicFolder = "Music/"; //Developer Specific
   String soundEffectsFolder = "Sound_Effects/"; //Developer Specific
@@ -88,17 +88,17 @@ void setup() {
     //akdsjkdajldjwaidjoafjsf jfjfjfjjfjfjjjfjfjfjffijirfjifrjifjirfij
     inspectMetaData( playListMetaData[currentSong]);
   }
-   for ( AudioPlayer song : playList ) {
+  for ( AudioPlayer song : playList ) {
     if ( song == null ) { //ERROR, play list is NULL
       //See FILE or minim.loadFile
       println("The Play List did not load properly");
       printArray(playList);
       exit();
     }
-}
+  }
 }
 void draw() {
-    //drawText( playListMetaData[currentSong].title(), playListMetaData[currentSong].genre() ); //Note: also author // playListMetaData[currentSong].genre()
+  //drawText( playListMetaData[currentSong].title(), playListMetaData[currentSong].genre() ); //Note: also author // playListMetaData[currentSong].genre()
 
   background(222);
 }//End Draw
@@ -107,7 +107,7 @@ void mousePressed() {
 } //End Mouse Pressed
 //
 void keyPressed() {
-    /* Simple Play
+  /* Simple Play
    playList[currentSong].play();
    currentSong++;
    */
