@@ -32,7 +32,13 @@ AudioPlayer[] soundEffects = new AudioPlayer[ numberOfSoundEffects];
 int currentSong = numberOfSongs - numberOfSongs; //ZERO, Math Property
 //
 int appWidth;
-int appHeight;
+int appHeight, shorterSide;
+String saveTxtPath_currentSong; //For Saving Last Known Song Played
+String saveTxtPath_randomStart; //For Saving Preference: Random Start
+//
+
+//
+Boolean randomStart=false;
 void setup() {
   // display
   size(1400, 900);
@@ -96,14 +102,37 @@ void setup() {
       exit();
     }
   }
+   shorterSide = int(comparisonReturnSmaller( float(appWidth), float(appHeight) ) );
+  //
+  //Saving Last Known Song Played
+  // Initialize the save file path
+  saveTxtPath_currentSong = sketchPath("currentSong.txt");
+  saveTxtPath_randomStart = sketchPath("randomStart.txt");
+  //println(saveTxtPath_currentSong);
+  //println(saveTxtPath_randomStart);
+  //
+  populationSetup();
+  //
+  musicLoad();
+  //
+  playList[ currentSong ].play(); 
 }
 void draw() {
   //drawText( playListMetaData[currentSong].title(), playListMetaData[currentSong].genre() ); //Note: also author // playListMetaData[currentSong].genre()
-
+  drawButtons();
   background(222);
 }//End Draw
 //
 void mousePressed() {
+    if ( mouseX>quitButtonX && mouseX<quitButtonX+quitButtonWidth && mouseY>quitButtonY && mouseY<quitButtonY+quitButtonHeight ) {
+    mousePressedQuitButton();
+  } else if ( quitDoubleClick==true && mouseX>quitScreenX && mouseX<quitScreenX+quitScreenWidth && mouseY>quitScreenY && mouseY<quitScreenY+quitScreenHeight ) {
+    mousePressedQuitButton();
+  } else if ( mouseX>randomStartButtonX && mouseX<randomStartButtonX+randomStartButtonWidth && mouseY>randomStartButtonY && mouseY<randomStartButtonY+randomStartButtonHeight ) {
+    randomStartButtonFeature();
+  } else {
+    simpleNextButton();
+  }
 } //End Mouse Pressed
 //
 void keyPressed() {
@@ -192,8 +221,13 @@ void keyPressed() {
     }
   }
   if ( key==CODED || keyCode==ESC ) exit(); // QUIT //UP
-  if ( key=='Q' || key=='q' ) exit(); // QUIT
-  //
+   if (key=='Q' || key=='q') {
+    mousePressedQuitButton();
+  } else if (key=='Z' || key=='z') {
+    randomStartButtonFeature();
+  } else {
+    simpleNextButton(); //Any other key
+  }
   if ( key=='N' || key=='n' ) { // NEXT //See .txt for starter hint
     if ( playList[currentSong].isPlaying() ) {
       playList[currentSong].pause();
