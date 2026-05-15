@@ -70,7 +70,7 @@ void setup() {
   //
   String pathway;
   for (String name : songName ) { //FOR Each
-    pathway = upArrow + normalFolder + musicFolder + name + fileExtension_WAV; //TO BE Rewritten and deleted once file is LOADED
+    pathway = upArrow + normalFolder + musicFolder + name + fileExtension_mp3; //TO BE Rewritten and deleted once file is LOADED
     playList[ currentSong ] = minim.loadFile( pathway ); //ERROR: Verify Spelling & Library installed, Sketch / Import Library
     playListMetaData[ currentSong ] = playList[ currentSong ].getMetaData();
     currentSong++;
