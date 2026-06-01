@@ -2,8 +2,8 @@ void musicLoad() {
   minim = new Minim(this);
   String absolutePath = sketchPath(); //To MAIN Program
   //println("Absolute Path:", absolutePath);
-  String upArrow = "/../../../../../";
-  String musicDirectory = "Dependancies/Music/"; //Hardcoded, always relative to the MAIN program
+  String upArrow = "../";
+  String musicDirectory = "Music Player/Music/"; //Hardcoded, always relative to the MAIN program
   String musicPathway = absolutePath + upArrow + musicDirectory;
   //println("Music Pathway:", musicPathway);
   //println(); //Note: space left, one method formatting CONSOLE

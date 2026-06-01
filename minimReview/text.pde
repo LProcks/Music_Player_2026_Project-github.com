@@ -1,4 +1,4 @@
-/*
+
 void drawText(String title, String message) {
   //Population: DIVs
   //Note: int(i/4) && i%4==2,3 (width, height)
@@ -107,4 +107,3 @@ void drawText(String title, String message) {
 }//End Draw Text
 //
 //End Text Example Subprogram
-*/
