@@ -10,12 +10,11 @@ int currentFile = numberOfFiles - numberOfFiles; //ZERO
 PImage[] imagesPlayList;
 //
 void fileImageLoading() {
-  String upArrow = ".."; //2x
-  String open = "/";
+  String upArrow = "../"; //2x
   String dependanciesFolder = "Dependancies"; //Relative Pathway
-  String imagesFolder = "Images"; //Relative Pathway
+  String imagesFolder = "Images/"; //Relative Pathway
   // if ( numberOfFiles==0 ) ... separete reading images with reading music
-  String imagesDirectory = sketchPath( upArrow + open + upArrow + open + upArrow + open + dependanciesFolder + open + imagesFolder + open ); //Hardcoded Folder Design
+  String imagesDirectory = sketchPath(upArrow + imagesFolder); //Hardcoded Folder Design
   //ErrorCheck("Inspection, Images Directory:", imagesDirectory);
   //
   //currentSong variable controls Music and Image to CANVAS

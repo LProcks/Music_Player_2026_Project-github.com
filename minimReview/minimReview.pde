@@ -31,6 +31,7 @@ AudioMetaData[] playListMetaData = new AudioMetaData[numberOfSongs];
 AudioPlayer[] soundEffects = new AudioPlayer[ numberOfSoundEffects];
 int currentSong = numberOfSongs - numberOfSongs; //ZERO, Math Property
 //
+Boolean musicGUI=false;
 int appWidth;
 int appHeight, shorterSide;
 String saveTxtPath_currentSong; //For Saving Last Known Song Played
@@ -116,11 +117,22 @@ void setup() {
   musicLoad();
   //
   playList[ currentSong ].play(); 
+   divs();
+  //ErrorCheck("End Setup Music GUI set:", musicGUI);
+  fileImageLoading();
 }
 void draw() {
   //drawText( playListMetaData[currentSong].title(), playListMetaData[currentSong].genre() ); //Note: also author // playListMetaData[currentSong].genre()
   drawButtons();
   background(222);
+  if ( musicGUI==true ) {
+    //seeMusicGUI();
+    imageDrawing( imagesPlayList[currentFile], 0 ); //imageDrawingAspectRatio
+    imageDrawingAspectRatio( imagesPlayList[currentFile], 12 ); //imageDrawing
+  } else {
+    background(0);
+  }
+  seeQuitMusicButton();
 }//End Draw
 //
 void mousePressed() {
@@ -133,13 +145,16 @@ void mousePressed() {
   } else {
     simpleNextButton();
   }
+  int num=4;
+  if ( mouseReturn (num) ) exit();
+  num=8;
+  if ( mouseReturn (num) ) musicGUI = varSwitch(musicGUI);
 } //End Mouse Pressed
 //
 void keyPressed() {
-  /* Simple Play
    playList[currentSong].play();
    currentSong++;
-   */
+   
   //
   /* Key Board Short Cuts ... learning what the Music Buttons could be
    Note: CAP Lock with ||
@@ -266,5 +281,14 @@ void keyPressed() {
    */
   //
 } //End Key Pressed
-//
+//Boolean varSwitch(Boolean variable) {
+  if ( variable==true ) {
+    return variable=false;
+  } else {
+    return variable=true;
+  }
+}
+Boolean mouseReturn (int num) {
+  return mouseX>divs[num] && mouseX<divs[num]+divs[num+2] && mouseY>divs[num+1] && mouseY<divs[num+1]+divs[num+3];
+}//End Mouse Return
 //End MAIN Program
