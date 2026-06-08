@@ -96,13 +96,13 @@ void imageDrawingAspectRatio( PImage image, int i ) {
 }//End imageDrawingAspectRatio
 //
 void checkLoadImage() {
-  PImage errorImage = loadImage( "Old man ERROR.png" );
+  PImage errorImage = loadImage( "WARNING Sign.jpg" );
   //Error image without need for pathway
   //Error image allows image() to be completed, notifying user of error
   //Demonstrates alternate way to load an image without a pathway
   for ( int i=0; i<imagesPlayList.length; i++ ) {
     if ( imagesPlayList[i] == null ) {
-      ErrorCheck("NullPointerException on Image ... Spelling Mistake with Pathway Concatenation, see File Loading or Image");
+    //  ErrorCheck("NullPointerException on Image ... Spelling Mistake with Pathway Concatenation, see File Loading or Image");
       imagesPlayList[i] = errorImage;
       exit(); //handled whenever the computer uses this part or Memory
     }

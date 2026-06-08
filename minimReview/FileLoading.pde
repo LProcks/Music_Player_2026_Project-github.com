@@ -37,7 +37,7 @@ void fileReading(String directory) {
       i++; //iteration necessary here, not in regular FOR
     }
   } else {
-    ErrorCheck("See fileReaeding(String pathway), fileNames==NULL");
+ //   ErrorCheck("See fileReaeding(String pathway), fileNames==NULL");
   }
   //First Time Only
   if (numberOfFiles==0) {

@@ -148,7 +148,7 @@ void mousePressed() {
   int num=4;
   if ( mouseReturn (num) ) exit();
   num=8;
-  if ( mouseReturn (num) ) musicGUI = varSwitch(musicGUI);
+ // if ( mouseReturn (num) ) musicGUI = varSwitch(musicGUI);
 } //End Mouse Pressed
 //
 void keyPressed() {
@@ -282,12 +282,12 @@ void keyPressed() {
   //
 } //End Key Pressed
 //Boolean varSwitch(Boolean variable) {
-  if ( variable==true ) {
-    return variable=false;
-  } else {
-    return variable=true;
-  }
-}
+//  if ( variable==true ) {
+//    return variable=false;
+ // } else {
+ //   return variable=true;
+//  }
+//}
 Boolean mouseReturn (int num) {
   return mouseX>divs[num] && mouseX<divs[num]+divs[num+2] && mouseY>divs[num+1] && mouseY<divs[num+1]+divs[num+3];
 }//End Mouse Return
